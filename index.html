@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/10ec6db0bd.js" crossorigin="anonymous"></script>
+    <title>Password visibility toggle</title>
+</head>
+<body>
+    <div id="container"> 
+        <form action="#">
+           <label for="password">Password:</label>
+            <input type="password" placeholder="e.g: A23ajdjc^^&2l">
+            <a href="#" id="eyeIcon">
+                <i class="far fa-eye" id="eye"></i>
+            </a>
+        </form>
+    </div>
+      
+      <script>
+         const container = document.getElementById('container');
+         const password = document.querySelector('input');
+         const icon = document.getElementById('eyeIcon');
+         const eye = document.getElementById('eye');
+         
+         icon.onclick = function(e) {
+             if(password.type == 'password') {
+               password.type = 'text';
+               eye.className = "fas fa-eye-slash";
+             }
+             else {
+               password.type = 'password';
+               eye.className = "far fa-eye";
+             }
+         }
+      </script>
+</body>
+</html>
